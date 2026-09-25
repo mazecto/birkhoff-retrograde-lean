@@ -1,0 +1,13 @@
+import Theorems.Thm_BirkhoffGlobalSection_leviCivita_zero_offset_square_lower_bound
+import Theorems.Thm_BirkhoffGlobalSection_inner_lagrange_circle_effective_potential_bound
+
+open BirkhoffGlobalSection
+
+theorem solution (μ : ℝ)
+    (hμ0 : 0 < μ) (hμ1 : μ < 1) (L : Phase)
+    (hL : IsInnerLagrangePoint μ L) (s : Phase)
+    (hr : ((leviCivitaPosition μ s) 0 + μ) ^ 2 +
+      ((leviCivitaPosition μ s) 1) ^ 2 = (L 0 + μ) ^ 2) :
+    zNormSq s * jacobiHamiltonian μ L ≤ leviCivitaHamiltonian μ 0 s := by
+  exact (inner_lagrange_circle_effective_potential_bound μ hμ0 hμ1 L hL s hr).trans
+    (leviCivita_zero_offset_square_lower_bound μ s)
