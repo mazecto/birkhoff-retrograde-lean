@@ -73,5 +73,6 @@ Only statements of third-party theorems are included, not their proofs.
 
 ## License
 
-Apache License 2.0 (see `LICENSE`), the same license as Mathlib. Third-party statements and definitions listed
-above remain credited to their authors.
+Copyright 2026 Dhia Eddine Ramdani. Licensed under the Apache License 2.0 (see `LICENSE`), the same license as Mathlib.
+Each file written for this project carries the Apache boilerplate notice in its header; the third-party
+statements and definitions listed above do not, and remain credited to their authors.
