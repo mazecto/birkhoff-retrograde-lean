@@ -1,9 +1,10 @@
 # Status
 
-Snapshot of the Prove2Me mission *Birkhoff's Retrograde Global-Section Conjecture* (plus the planar-topology crossing lemmas it uses), taken 2026-09-25.
+Snapshot of the Prove2Me mission *Birkhoff's Retrograde Global-Section Conjecture* (plus the planar-topology crossing lemmas it uses), updated 2026-09-25.
 
-- Statements tracked: **124** — Proved on the platform: **113**, Open: **11**.
-- Proof files in this repo: **109** complete proofs and **7** accepted reductions (sketches).
+- Statements tracked: **143** — Proved on the platform: **130**, Open: **13**.
+- Proof files in this repo: **126** complete proofs and **8** accepted reductions (sketches).
+- **Milestone:** `birkhoff_shooting_symmetric_half_orbit` (Birkhoff's shooting lemma) and `birkhoff_retrograde_orbit_exists` (existence of the retrograde orbit) are Proved: every statement they depend on is Proved.
 
 *Proof* = checked proof importing only proved statements. *Reduction* = checked proof that imports open statements (the open statements are its remaining children). *Statement only* = the statement is used here but no proof of it is included.
 
@@ -12,19 +13,38 @@ Snapshot of the Prove2Me mission *Birkhoff's Retrograde Global-Section Conjectur
 | `BirkhoffGlobalSection.antipodal_symmetry` | Proved | statement only | — |
 | `BirkhoffGlobalSection.away_from_equal_mass_retrograde_global_section` | Open | statement only | — |
 | `BirkhoffGlobalSection.birkhoff_far_arc_continuity` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_continuity.lean` |
-| `BirkhoffGlobalSection.birkhoff_far_arc_end` | Open | statement only | — |
+| `BirkhoffGlobalSection.birkhoff_far_arc_degeneration` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_degeneration.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_arc_end` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_end.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_arc_end_rest` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_end_rest.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_arc_limit` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_limit.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_arc_limit_rest` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_limit_rest.lean` |
 | `BirkhoffGlobalSection.birkhoff_far_arc_small` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_arc_small.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_arc_velocity_bound` | Open | statement only | — |
+| `BirkhoffGlobalSection.birkhoff_far_axis_exclusion` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_axis_exclusion.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_collision_strict` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_collision_strict.lean` |
 | `BirkhoffGlobalSection.birkhoff_far_crossing_curve` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_far_crossing_curve.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_crossing_curve_rest` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_crossing_curve_rest.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_limit_end` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_limit_end.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_no_rest_end` | Open | statement only | — |
 | `BirkhoffGlobalSection.birkhoff_far_shooting_family` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_far_shooting_family.lean` |
+| `BirkhoffGlobalSection.birkhoff_far_shooting_family_rest` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_far_shooting_family_rest.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_arc_continuity` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_arc_continuity.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_arc_degeneration` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_arc_degeneration.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_arc_end` | Open | statement only | — |
+| `BirkhoffGlobalSection.birkhoff_near_arc_end_weak` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_arc_end_weak.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_arc_limit` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_arc_limit.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_arc_small` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_arc_small.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_boundary_exclusion` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_boundary_exclusion.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_collision_strict` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_collision_strict.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_crossing_curve` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_near_crossing_curve.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_crossing_curve_weak` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_crossing_curve_weak.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_limit_collision` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_limit_collision.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_quadrant_monotone` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_quadrant_monotone.lean` |
 | `BirkhoffGlobalSection.birkhoff_near_shooting_family` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_near_shooting_family.lean` |
+| `BirkhoffGlobalSection.birkhoff_near_shooting_family_weak` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_near_shooting_family_weak.lean` |
 | `BirkhoffGlobalSection.birkhoff_retrograde_global_section` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_retrograde_global_section.lean` |
-| `BirkhoffGlobalSection.birkhoff_retrograde_orbit_exists` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_retrograde_orbit_exists.lean` |
-| `BirkhoffGlobalSection.birkhoff_shooting_symmetric_half_orbit` | Open | reduction (sketch) | `Proofs/BirkhoffGlobalSection_birkhoff_shooting_symmetric_half_orbit.lean` |
+| `BirkhoffGlobalSection.birkhoff_retrograde_orbit_exists` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_retrograde_orbit_exists.lean` |
+| `BirkhoffGlobalSection.birkhoff_shooting_symmetric_half_orbit` | Proved | proof | `Proofs/BirkhoffGlobalSection_birkhoff_shooting_symmetric_half_orbit.lean` |
 | `BirkhoffGlobalSection.circle_reciprocal_distance_bound` | Proved | proof | `Proofs/BirkhoffGlobalSection_circle_reciprocal_distance_bound.lean` |
 | `BirkhoffGlobalSection.compact_unique_fiber_selection_continuous` | Proved | proof | `Proofs/BirkhoffGlobalSection_compact_unique_fiber_selection_continuous.lean` |
 | `BirkhoffGlobalSection.compact_unique_ray_graph_compact` | Proved | proof | `Proofs/BirkhoffGlobalSection_compact_unique_ray_graph_compact.lean` |

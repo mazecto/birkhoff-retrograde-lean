@@ -1,0 +1,44 @@
+/-
+Copyright 2026 Dhia Eddine Ramdani
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-/
+
+import Definitions.Def_BirkhoffShootingCoordinates
+
+namespace BirkhoffGlobalSection
+
+theorem birkhoff_near_shooting_family_weak (μ c : ℝ)
+    (hμ0 : 0 < μ) (hμ1 : μ < 1)
+    (hc : belowFirstCriticalValue μ c)
+    (φ : Flow ℝ (LeftEnergyState μ c))
+    (hφ : IsLeviCivitaHamiltonianFlow μ c φ) :
+    ∃ Γ : ℝ → ℝ × ℝ, ∃ α : ℝ, -1 ≤ α ∧ α < -(Real.sqrt 2 / 2) ∧
+      ContinuousOn Γ (Set.Icc (-1) 1) ∧
+      Γ (-1) = (α, 0) ∧ Γ 1 = (Real.sqrt 2 / 2, 0) ∧
+      (∀ s ∈ Set.Icc (-1 : ℝ) 1,
+        -1 ≤ (Γ s).1 ∧ (Γ s).1 ≤ 1 ∧ 0 ≤ (Γ s).2 ∧ (Γ s).2 ≤ 1) ∧
+      ∀ s ∈ Set.Ioo (-1 : ℝ) 1, |(Γ s).1| < 1 ∧ 0 < (Γ s).2 ∧
+        ∃ x : LeftEnergyState μ c, ∃ τ : ℝ, 0 < τ ∧
+          (x : Phase) 1 = 0 ∧ (x : Phase) 2 = 0 ∧ (x : Phase) 0 ≠ 0 ∧
+          (∀ t ∈ Set.Ioo (-τ) 0,
+            relativePosition μ ((φ t x : LeftEnergyState μ c) : Phase) 1 < 0) ∧
+          StrictMonoOn
+            (fun t : ℝ => relativePosition μ ((φ t x : LeftEnergyState μ c) : Phase) 0)
+            (Set.Icc (-τ) 0) ∧
+          relativePosition μ ((φ (-τ) x : LeftEnergyState μ c) : Phase) 0 = 0 ∧
+          0 < jacobiVelocity
+            (leviCivitaToJacobi μ ((φ (-τ) x : LeftEnergyState μ c) : Phase)) 0 ∧
+          shootingCoordinates μ ((φ (-τ) x : LeftEnergyState μ c) : Phase) = Γ s := by sorry
+
+end BirkhoffGlobalSection

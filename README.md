@@ -18,20 +18,36 @@ for `0 < μ < 1` and energies below the first critical value:
 - **Geometry of the energy component** — compactness, regularity, radial structure, the Hill-region
   bounds, the inner Lagrange point and the first critical value.
 - **Symmetries of the flow** — antipodal equivariance and the `q₂`-reflection reversibility.
-- **Reduction of the retrograde-orbit theorem** to Birkhoff's shooting lemma (a symmetric half-orbit),
-  with the winding/closing argument fully proved.
-- **Birkhoff's two-family shooting argument**, reduced to four analytic lemmas and a planar crossing lemma:
+- **Existence of Birkhoff's retrograde periodic orbit** (`birkhoff_retrograde_orbit_exists`), obtained from
+  Birkhoff's shooting lemma (a symmetric half-orbit) by a fully proved winding/closing argument.
+- **Birkhoff's two-family shooting lemma** (`birkhoff_shooting_symmetric_half_orbit`), proved completely:
   - the planar crossing lemmas (`PlanarTopology.crossing_paths_in_square`,
     `interlaced_arcs_in_rectangle`), derived from Brouwer's fixed point theorem without the Jordan curve theorem;
   - the near-side monotonicity `d/dt (v₁ + 2x₂) = Ω_{x₁} < 0`;
   - **continuity of the first crossing** for both families (persistence of transversal crossings);
-  - **the collision limits** `σ → ±√2/2` for starts close to the primary (near-linear flow estimates).
+  - **the collision limits** `σ → ±√2/2` for starts close to the primary (near-linear flow estimates);
+  - **compactness at the first failing parameter** for both families. On the far side this follows
+    Birkhoff 1915 §18: his identity (59) (the torque identity for `L = x v₂ − y v₁`) and his third-derivative
+    argument exclude an interior zero of `v₁`;
+  - **the end of the far family.** Birkhoff does not treat the case where the far family ends at rest on the
+    line through the primary. The `…_rest` lemmas allow it. The energy relation `|v|² = 2(Ω − c)` and the strict
+    decrease of `Ω` along that line inside the inner Lagrange disk show that every moving crossing state lies
+    strictly above the rest state. The near curve then cannot reach the top edge of Birkhoff's rectangle, and
+    the interlaced-arcs lemma applies to a truncated far curve.
 
 ## What is still open
 
-The two **end lemmas** `birkhoff_near_arc_end` / `birkhoff_far_arc_end` — the behaviour of the shooting
-families at their first failing parameter (degeneration into a collision orbit and the strict position of
-its arrival direction). Everything above them in the tree is reduced to these; see `STATUS.md`.
+Birkhoff's retrograde orbit and the shooting lemma are **Proved**. Still open in the mission:
+
+- the global-section statements `birkhoff_retrograde_global_section`, `near_equal_mass_birkhoff_rational_global_section`
+  and `away_from_equal_mass_retrograde_global_section`;
+- some alternative, stronger lemmas that the proof no longer needs:
+  - the strict near end `birkhoff_near_arc_end`;
+  - Birkhoff-type far-end statements without the rest case (`birkhoff_far_arc_end`, `birkhoff_far_arc_limit`, …);
+  - the two leaves that would exclude the rest end directly (`birkhoff_far_no_rest_end`,
+    `birkhoff_far_arc_velocity_bound`).
+
+See `STATUS.md` for the full list.
 
 ## Layout
 
